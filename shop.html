@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rice Shop</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+
+<body>
+
+<div class="top-bar">
+  <h1>🌾 Rices</h1>
+
+  <button class="cart-btn" onclick="openCart()">
+    🛍️ Cart <span id="cart-count">0</span>
+  </button>
+</div>
+
+
+<div id="cart-panel" class="cart-panel">
+
+  <h2>🛒 Your Cart</h2>
+
+  <div id="cart-items"></div>
+
+  <h3>Total: ₹<span id="total">0</span></h3>
+
+ 
+
+<input type="text" id="name" placeholder="Full Name"><br><br>
+<input type="text" id="phone" placeholder="Contact Number"><br><br>
+
+  <h3>Delivery Address</h3>
+<input type="text" id="house" placeholder="House No / Flat No"><br><br>
+<input type="text" id="street" placeholder="Street Name"><br><br>
+<input type="text" id="city" placeholder="City"><br><br>
+<input type="text" id="pincode" placeholder="Pincode"><br><br>
+<textarea id="address" placeholder="Full Address"></textarea>
+
+  <h3>Payment Method</h3>
+<select id="payment" onchange="toggleUPI()">
+  <option>Cash on Delivery</option>
+  <option>UPI</option>
+</select>
+
+<br><br>
+
+<button onclick="payNow()" id="pay-btn">
+  Pay Now
+</button>
+
+<!-- UPI QR BOX -->
+<!-- UPI POPUP -->
+<div id="upi-popup" class="popup">
+
+  <div class="popup-content">
+
+    <span class="close" onclick="closeUPI()">&times;</span>
+
+    <h2>Scan & Pay</h2>
+
+    <img src="https://tse1.mm.bing.net/th/id/OIP.xc2Fz-kuUfUlu23Q7XOkOAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" width="250">
+
+    <br><br>
+
+    <button onclick="paymentSuccess()">
+      Payment 
+    </button>
+
+  </div>
+
+</div>
+<p>Subtotal: ₹<span id="subtotal">0</span></p>
+<p>Delivery Fee: ₹<span id="deliveryFee">0</span></p>
+
+<div class="btn-row">
+
+  <button class="close-btn" onclick="closeCart()">Close</button>
+</div>
+ 
+
+</div>
+
+<div class="grid">
+<div class="card" onclick="openProduct('Basmati Rice','120','4.5','2026-01-10','https://tse1.mm.bing.net/th/id/OIP.ag8a43MsHWHJja5dqDSgygHaE8?pid=Api&P=0&h=180')">
+
+  <img src="https://tse1.mm.bing.net/th/id/OIP.ag8a43MsHWHJja5dqDSgygHaE8?pid=Api&P=0&h=180">
+
+  <h3>Basmati Rice</h3>
+  <p>₹120 / kg</p>
+  <button onclick="addToCart('Basmati Rice',120)">Add to Cart</button>
+
+</div>
+
+ <div class="card" onclick="openProduct('Sona Masoori','80','4.3','2026-02-15','https://tse2.mm.bing.net/th/id/OIP.St-3S-6HJogVsYlFHdIVYwHaF0?pid=Api&P=0&h=180')">
+  <img src="https://tse2.mm.bing.net/th/id/OIP.St-3S-6HJogVsYlFHdIVYwHaF0?pid=Api&P=0&h=180">
+  <h3>Sona Masoori</h3>
+  <p>₹80 / kg</p>
+  <button onclick="addToCart('Sona Masoori',80)">Add to Cart</button>
+</div>
+
+  <div class="card" onclick="openProduct('Jasmine Rice','110','4.2','2026-01-20','https://thumbs.dreamstime.com/b/uncooked-jasmine-rice-saucepan-44974048.jpg')">
+  <img src="https://thumbs.dreamstime.com/b/uncooked-jasmine-rice-saucepan-44974048.jpg">
+  <h3>Jasmine Rice</h3>
+  <p>₹110 / kg</p>
+  <button onclick="addToCart('Jasmine Rice',110)">Add to Cart</button>
+</div>
+
+  <div class="card" onclick="openProduct('Brown Rice','90','4.1','2026-03-10','https://static.india.com/wp-content/uploads/2022/08/brown-rice.jpg')">
+  <img src="https://static.india.com/wp-content/uploads/2022/08/brown-rice.jpg">
+  <h3>Brown Rice</h3>
+  <p>₹90 / kg</p>
+  <button onclick="addToCart('Brown Rice',90)">Add to Cart</button>
+</div>
+  <div class="card" onclick="openProduct('Kolam Rice','75','4.0','2026-01-05','https://tse3.mm.bing.net/th/id/OIP.GmVqlBCcOv8h5qZ_zfrINAHaGU?pid=Api&P=0&h=180')">
+  <img src="https://tse3.mm.bing.net/th/id/OIP.GmVqlBCcOv8h5qZ_zfrINAHaGU?pid=Api&P=0&h=180">
+  <h3>Kolam Rice</h3>
+  <p>₹75 / kg</p>
+  <button onclick="addToCart('Kolam Rice',75)">Add to Cart</button>
+</div>
+
+  <div class="card" onclick="openProduct('Gobindobhog','130','4.6','2026-02-01','https://tse4.mm.bing.net/th/id/OIP.lpHtzixaXTjXSv6dPuQ60gHaEO?pid=Api&P=0&h=180')">
+  <img src="https://tse4.mm.bing.net/th/id/OIP.lpHtzixaXTjXSv6dPuQ60gHaEO?pid=Api&P=0&h=180">
+  
+  <h3>Gobindobhog</h3>
+  <p>₹130 / kg</p>
+  <button onclick="addToCart('Gobindobhog',130)">Add to Cart</button>
+</div>
+
+<div class="card" onclick="openProduct('Matta Rice','85','4.2','2026-01-18','https://static.tnn.in/thumb/msid-116296629,thumbsize-49730,width-1280,height-720,resizemode-75/116296629.jpg')">
+  <img src="https://static.tnn.in/thumb/msid-116296629,thumbsize-49730,width-1280,height-720,resizemode-75/116296629.jpg">
+  <h3>Matta Rice</h3>
+  <p>₹85 / kg</p>
+  <button onclick="addToCart('Matta Rice',85)">Add to Cart</button>
+</div>
+
+ <div class="card" onclick="openProduct('Jeera Samba','140','4.7','2026-03-01','https://5.imimg.com/data5/SELLER/Default/2021/4/NW/GT/TC/126914964/jeera-samba-rice-1000x1000.jpg')">
+  <img src="https://5.imimg.com/data5/SELLER/Default/2021/4/NW/GT/TC/126914964/jeera-samba-rice-1000x1000.jpg">
+  <h3>Jeera Samba</h3>
+  <p>₹140 / kg</p>
+  <button onclick="addToCart('Jeera Samba',140)">Add to Cart</button>
+</div>
+
+<div class="card" onclick="openProduct('Ambemohar','95','4.1','2026-01-12','https://tse4.mm.bing.net/th/id/OIP.4LDDOYo_jhYTfkUz4ccbMgHaHa?pid=Api&P=0&h=180')">
+  <img src="https://tse4.mm.bing.net/th/id/OIP.4LDDOYo_jhYTfkUz4ccbMgHaHa?pid=Api&P=0&h=180">
+  <h3>Ambemohar</h3>
+  <p>₹95 / kg</p>
+  <button onclick="addToCart('Ambemohar',95)">Add to Cart</button>
+</div>
+
+  <div class="card">
+    <img src="https://5.imimg.com/data5/KD/SO/PG/GLADMIN-10590137/db2-500x500.jpg" alt="">
+    <h3>Dubraj Rice</h3>
+    <p>₹100 / kg</p>
+    <button onclick="addToCart('Dubraj Rice',100)">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="https://tse1.mm.bing.net/th/id/OIP.U-8MpdGekQTCBfefGH8LUwHaHa?pid=Api&P=0&h=180" alt="">
+    <h3>Navara Rice</h3>
+    <p>₹150 / kg</p>
+    <button onclick="addToCart('Navara Rice',150)">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="https://tse1.mm.bing.net/th/id/OIP.nhjUxcL27yg-METl9WwSxAHaE7?pid=Api&P=0&h=180" alt="">
+    <h3>IR 64 Rice</h3>
+    <p>₹55 / kg</p>
+    <button onclick="addToCart('IR 64 Rice',55)">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="https://tse1.mm.bing.net/th/id/OIP.ZcqqQFKSyDInmAEGOvoS0AHaHa?pid=Api&P=0&h=180" alt="">
+    <h3>Ponni Rice</h3>
+    <p>₹70 / kg</p>
+    <button onclick="addToCart('Ponni Rice',70)">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="http://uocb.org/wp-content/uploads/2023/01/Red-Rice.jpg" alt="">
+    <h3>Red Rice</h3>
+    <p>₹110 / kg</p>
+    <button onclick="addToCart('Red Rice',110)">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="https://myhealthopedia.com/wp-content/uploads/2025/04/Black-Rice-1.jpg" alt="">
+    <h3>Black Rice</h3>
+    <p>₹180 / kg</p>
+    <button onclick="addToCart('Black Rice',180)">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="https://5.imimg.com/data5/OI/LY/MY-54926661/katarni-rice-500x500.jpg" alt="">
+    <h3>Katarni Rice</h3>
+    <p>₹160 / kg</p>
+    <button onclick="addToCart('Katarni Rice',160)">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="https://im.indiatimes.in/content/2022/Nov/2_6360e65869cd3.png?w=725&h=465&cc=1" alt="">
+    <h3>Kalanamak Rice</h3>
+    <p>₹200 / kg</p>
+    <button onclick="addToCart('Kalanamak Rice',200)">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="https://5.imimg.com/data5/JM/ED/MY-48709883/hmt-rice-500x500.jpg" alt="">
+    <h3>HMT Rice</h3>
+    <p>₹85 / kg</p>
+    <button onclick="addToCart('HMT Rice',85)">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="https://sarkhotnaturalfarms.com/wp-content/uploads/2022/06/Rice-Wada-Kolam-1.jpg" alt="">
+    <h3>Wada Kolam</h3>
+    <p>₹78 / kg</p>
+    <button onclick="addToCart('Wada Kolam',78)">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="https://tse4.mm.bing.net/th/id/OIP.XiKiDyDkLARJKykRlgT3fQHaE7?pid=Api&P=0&h=180" alt="">
+    <h3>Organic Rice</h3>
+    <p>₹140 / kg</p>
+    <button onclick="addToCart('Organic Rice',140)">Add to Cart</button>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <h2>About Us</h2>
+
+  <p>
+    🌾 Welcome to Rice Shop – your trusted online store for fresh and quality rice varieties.
+    We provide premium rice like Basmati, Sona Masoori, Brown Rice and many more directly from farmers.
+  </p>
+
+  <p>
+    🚚 Fast delivery | 💰 Best price | 🌱 Fresh quality guaranteed
+  </p>
+
+  <p>
+    📞 Contact: +91 98765 43210 <br>
+    📧 Email: support@riceshop.com
+  </p>
+
+  <p class="copy">
+    © 2026 Rice Shop. All Rights Reserved.
+  </p>
+</footer>
+<div id="product-popup" style="
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+z-index:9999;
+">
+
+  <div style="
+  background:white;
+  width:320px;
+  margin:80px auto;
+  padding:20px;
+  border-radius:10px;
+  text-align:center;
+  position:relative;
+  ">
+
+    <span onclick="closeProduct()" style="
+      position:absolute;
+      right:10px;
+      top:5px;
+      cursor:pointer;
+      font-size:20px;">❌</span>
+
+    <img id="pimg" style="width:100%; border-radius:10px;">
+    
+    <h2 id="pname"></h2>
+    <p>💰 Price: ₹<span id="pprice"></span></p>
+    <p>⭐ Rating: <span id="prating"></span>/5</p>
+    <p>📅 MFG: <span id="pmfg"></span></p>
+
+    <button onclick="addToPopupCart()" style="
+      background:green;
+      color:white;
+      border:none;
+      padding:8px 15px;
+      margin-top:10px;
+      cursor:pointer;">
+      Add to Cart
+    </button>
+
+  </div>
+</div>
+<script src="shop.js"></script>
+
+</body>
+</html>

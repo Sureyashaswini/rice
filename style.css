@@ -1,0 +1,264 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #f4f4f4;
+}
+
+/* HEADER */
+header {
+  background: green;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-right {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+button {
+  padding: 6px 10px;
+  border: none;
+  background: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* CONTENT */
+.container {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* SIDE IMAGE */
+.side {
+  width: 30%;
+}
+
+.side img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* CONTENT BOX WITH WATERMARK */
+.content {
+  width: 70%;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* WATERMARK IMAGE */
+.content::before {
+  content: "";
+  background: url("https://tse1.mm.bing.net/th/id/OIP.-D8qRYZwnI3FbmYhK5pjjAHaEK?pid=Api&P=0&h=180");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.08;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.content p, .content h2 {
+  position: relative;
+  z-index: 1;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-box {
+  background: white;
+  padding: 20px;
+  width: 300px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+input {
+  width: 90%;
+  padding: 8px;
+  margin: 8px 0;
+}
+
+/* FOOTER */
+footer {
+  background: #222;
+  color: white;
+  padding: 25px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-left, .footer-right {
+  width: 45%;
+}
+
+footer h3 {
+  color: lightgreen;
+}
+
+footer .copyright {
+  text-align: center;
+  margin-top: 15px;
+  border-top: 1px solid #444;
+  padding-top: 10px;
+}
+/* HEADER LAYOUT */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: green;
+  color: white;
+}
+
+/* RIGHT SIDE BUTTON GROUP */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* BUTTON STYLE */
+.header-right button {
+  padding: 8px 14px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* LANGUAGE DROPDOWN */
+.header-right select {
+  padding: 6px;
+  border-radius: 5px;
+}
+/* FULL SCREEN OVERLAY */
+.auth-screen {
+  position: fixed;
+  top: 0;
+  left: -350px;   /* hidden by default */
+  width: 300px;
+  height: 100%;
+  background: white;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+  transition: 0.4s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-screen.active {
+  left: 0;  /* slide in */
+}
+
+.auth-box {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.auth-box input {
+  padding: 10px;
+}
+
+.auth-box button {
+  padding: 10px;
+  background: green;
+  color: white;
+  border: none;
+}
+
+header {
+  position: relative;
+}
+
+/* CART BUTTON RIGHT CORNER */
+.cart-btn {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  color: green;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* BADGE STYLE */
+#cart-count {
+  background: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  margin-left: 5px;
+}
+.btn-row {
+  display: flex;
+  gap: 50px; /* 👈 THIS creates space */
+  margin-top: 15px;
+}
+
+.pay {
+  flex: 1;
+  background: green;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  gap: 50px;
+}
+
+.close {
+  flex: 1;
+  background: gray;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  gap: 50px;
+  cursor: pointer;
+}
+
+.pay:hover {
+  background: darkgreen;
+    gap: 50px;
+}
+
+.close:hover {
+  background: #555;
+    gap: 50px;
+}
+

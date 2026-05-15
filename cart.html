@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkout - Rice Shop</title>
+  <link rel="stylesheet" href="cart.css">
+</head>
+
+<body>
+
+<div class="top-bar">
+  <h2>🛒 Checkout</h2>
+</div>
+
+<div class="box">
+
+  <div id="items"></div>
+
+  <h3>Delivery Address</h3>
+  <textarea id="address" placeholder="Enter full address"></textarea>
+
+  <h3>Payment Method</h3>
+  <select id="payment">
+    <option>UPI</option>
+    <option>Card</option>
+    <option>Cash on Delivery</option>
+  </select>
+
+  <div class="summary">
+    <p>Subtotal: ₹<span id="subtotal">0</span></p>
+    <p>Delivery Fee: ₹50</p>
+    <h2>Total: ₹<span id="total">0</span></h2>
+
+    <div class="btn-row">
+      <button class="pay" onclick="payNow()">Pay Now</button>
+      <button class="close" onclick="window.location.href='index.html'">Close</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="cart.js"></script>
+</body>
+</html>
