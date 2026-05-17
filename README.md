@@ -1,6 +1,5 @@
 # rice
 RiceMitra is a user-friendly rice sales and information portal that provides:
-
  Information about rice varieties and their importance.
  Multi-language support including English, Telugu, Hindi, and Tamil.
  User authentication with Sign In and Sign Up features.
@@ -11,13 +10,13 @@ RiceMitra is a user-friendly rice sales and information portal that provides:
  Payment success handling and order placement features.
 
 Main Features
-🌾 Rice education and awareness
-🛒 Add to Cart & Checkout
-🌐 Multi-language support
-🔐 User Login/Register
-💳 Multiple payment methods
-📦 Delivery address system
-📱 Responsive and simple interface
+  🌾 Rice education and awareness
+  🛒 Add to Cart & Checkout
+  🌐 Multi-language support
+  🔐 User Login/Register
+  💳 Multiple payment methods
+  📦 Delivery address system
+  📱 Responsive and simple interface
 
 Technologies Used
   HTML for webpage structure
