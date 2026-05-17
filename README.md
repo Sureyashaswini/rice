@@ -8,7 +8,7 @@ RiceMitra is a user-friendly rice sales and information portal that provides:
  Dynamic cart management using Local Storage.
  Product popup details with pricing, ratings, manufacturing information, and images.
  Payment success handling and order placement features.
-
+##
 Main Features
   🌾 Rice education and awareness
   🛒 Add to Cart & Checkout
@@ -17,13 +17,13 @@ Main Features
   💳 Multiple payment methods
   📦 Delivery address system
   📱 Responsive and simple interface
-
+##
 Technologies Used
   HTML for webpage structure
   CSS for styling and layout
   JavaScript for interactivity and cart/payment functionality
   LocalStorage for storing cart data in the browser
-
+##
 Purpose
 
 The website aims to provide an easy platform for users to explore rice products, understand rice varieties, and purchase them conveniently online.
